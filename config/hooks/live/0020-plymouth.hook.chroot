@@ -1,0 +1,9 @@
+#!/bin/bash
+set -e
+
+update-alternatives --install \
+	/usr/share/plymouth/themes/default.plymouth \
+	default.plymouth \
+	/usr/share/plymouth/themes/debami/debami.plymouth 100
+
+plymouth-set-default-theme -R debami

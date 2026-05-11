@@ -1,0 +1,35 @@
+Window.SetBackgroundTopColor(0.17, 0.19, 0.20);
+Window.SetBackgroundBottomColor(0.11, 0.12, 0.13);
+
+title_image = Image.Text("DEBAMI", 1, 1, 1, 1, "Sans Bold 24");
+title_sprite = Sprite(title_image);
+title_sprite.SetX(Math.Int(Window.GetWidth()  / 2 - title_image.GetWidth()  / 2));
+title_sprite.SetY(Math.Int(Window.GetHeight() / 2 - title_image.GetHeight() / 2));
+title_sprite.SetZ(10);
+
+bar_length = 300;
+bar_y = Math.Int(Window.GetHeight() * 0.65);
+bar_x = Math.Int(Window.GetWidth() / 2 - bar_length / 2);
+bar_sprite = Sprite();
+bar_sprite.SetZ(5);
+
+fun boot_progress_callback(duration, progress) {
+    filled = Math.Int(bar_length * progress);
+    if (filled < 1) return;
+    pixel = Image(1, 6);
+    pixel.SetPixelRGBA(0, 0, 0.30, 0.44, 0.47, 1.0);
+    bar_sprite.SetImage(pixel.Scale(filled, 6));
+    bar_sprite.SetPosition(bar_x, bar_y, 5);
+}
+Plymouth.SetBootProgressFunction(boot_progress_callback);
+
+msg_sprite = Sprite();
+msg_sprite.SetZ(10);
+
+fun message_callback(text) {
+    msg_image = Image.Text(text, 0.6, 0.6, 0.6, 1, "Sans 10");
+    msg_sprite.SetImage(msg_image);
+    msg_sprite.SetX(Math.Int(Window.GetWidth()  / 2 - msg_image.GetWidth()  / 2));
+    msg_sprite.SetY(Math.Int(Window.GetHeight() * 0.75));
+}
+Plymouth.SetMessageFunction(message_callback);

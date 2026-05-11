@@ -1,0 +1,5 @@
+#!/bin/bash
+echo "es_ES.UTF-8 UTF-8" >> /etc/locale.gen
+/usr/sbin/locale-gen
+update-locale LANG=es_ES.UTF-8
+ln -sf /usr/share/zoneinfo/Europe/Madrid /etc/localtime

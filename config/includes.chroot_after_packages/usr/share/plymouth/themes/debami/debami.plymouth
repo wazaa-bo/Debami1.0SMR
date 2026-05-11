@@ -1,0 +1,8 @@
+[Plymouth Theme]
+Name=DEBAMI
+Description=DEBAMI boot splash
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/debami
+ScriptFile=/usr/share/plymouth/themes/debami/debami.script

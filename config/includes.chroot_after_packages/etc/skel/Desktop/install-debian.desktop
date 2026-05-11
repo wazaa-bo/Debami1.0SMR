@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Install Debian
+GenericName=Live Installer
+Comment=Install the operating system to your hard drive
+Exec=pkexec env LANG=es_ES.UTF-8 LC_ALL=es_ES.UTF-8 calamares
+Icon=calamares
+Terminal=false
+Categories=System;

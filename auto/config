@@ -1,0 +1,9 @@
+#!/bin/sh
+lb config noauto \
+	--architectures amd64 \
+	--distribution bookworm \
+	--binary-images iso-hybrid \
+	--archive-areas "main contrib non-free non-free-firmware" \
+	--bootappend-live "boot=live components locales=es_ES.UTF-8 keyboard-layouts=es" \
+	--mirror-bootstrap "http://ftp.es.debian.org/debian/" \
+	--mirror-chroot "http://ftp.es.debian.org/debian/" 

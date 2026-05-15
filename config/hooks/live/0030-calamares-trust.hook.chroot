@@ -1,4 +1,0 @@
-#!/bin/sh
-sed -i 's|Exec=pkexec calamares|Exec=pkexec env LANG=es_ES.UTF-8 LC_ALL=es_ES.UTF-8 calamares|' /usr/share/applications/install-debian.desktop
-chmod +x /usr/share/applications/install-debian.desktop
-chmod +x /etc/skel/Desktop/install-debian.desktop
